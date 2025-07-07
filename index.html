@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonAnime | Futuristic Anime Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-blue: #00f7ff;
+            --neon-purple: #b400ff;
+            --dark-bg: #0a0a0f;
+            --darker-bg: #050508;
+            --card-bg: #111118;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        
+        .futuristic-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .neon-text-blue {
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+            color: var(--neon-blue);
+        }
+        
+        .neon-text-purple {
+            text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+            color: var(--neon-purple);
+        }
+        
+        .neon-border-blue {
+            box-shadow: 0 0 10px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .neon-border-purple {
+            box-shadow: 0 0 10px var(--neon-purple), inset 0 0 10px var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+        }
+        
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        
+        .anime-card {
+            transition: all 0.3s ease;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
+        }
+        
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 247, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 247, 255, 0); }
+        }
+        
+        .grid-lines {
+            background-image: 
+                linear-gradient(rgba(180, 0, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(180, 0, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .video-player {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, #1a1a2e 100%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-purple);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-blue);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2rem !important;
+            }
+            
+            .section-title {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="grid-lines">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-90 backdrop-blur-md fixed w-full z-50 border-b border-purple-900">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-robot text-2xl neon-text-blue"></i>
+                    <a href="#" class="futuristic-font text-2xl font-bold neon-text-purple">NEON<span class="neon-text-blue">ANIME</span></a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Browse</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Genres</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Watchlist</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search anime..." class="bg-gray-900 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 w-40 md:w-64 transition-all">
+                        <button class="absolute right-3 top-2 text-gray-400 hover:text-purple-400">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="md:hidden text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <button class="hidden md:block bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900 to-transparent opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="hero-text futuristic-font text-4xl md:text-5xl font-bold mb-6 neon-text-blue">
+                        STREAM <span class="neon-text-purple">ANIME</span> IN <span class="neon-text-blue">FUTURE</span>
+                    </h1>
+                    <p class="text-gray-300 mb-8 text-lg max-w-lg">
+                        Unlimited access to thousands of anime series and movies in stunning quality. Watch anywhere, anytime.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium flex items-center">
+                            <i class="fas fa-play mr-2"></i> Start Watching
+                        </button>
+                        <button class="border border-purple-500 text-purple-400 px-6 py-3 rounded-full hover:bg-purple-900 hover:bg-opacity-30 transition-colors font-medium flex items-center">
+                            <i class="fas fa-list mr-2"></i> Browse Library
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-500 rounded-2xl opacity-70 blur-lg"></div>
+                        <div class="relative bg-gray-900 rounded-xl overflow-hidden">
+                            <img src="https://via.placeholder.com/600x400/111118/00f7ff?text=Featured+Anime" alt="Featured Anime" class="w-full h-auto">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <h3 class="text-white font-bold text-lg">Jujutsu Kaisen</h3>
+                                        <p class="text-gray-300 text-sm">Episode 24</p>
+                                    </div>
+                                    <button class="bg-purple-600 text-white p-2 rounded-full hover:bg-purple-700 transition-colors">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Trending Now Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-purple">
+                    <i class="fas fa-fire mr-2"></i> TRENDING NOW
+                </h2>
+                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                    View All <i class="fas fa-chevron-right ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Anime Card 1 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+1" alt="Anime 1" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Adventure</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">24 Episodes</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> 8.9
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            HD
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">Attack on Titan Final Season</h3>
+                    <p class="text-gray-400 text-xs">2023 • TV Series</p>
+                </div>
+                
+                <!-- Anime Card 2 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+2" alt="Anime 2" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Fantasy</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Isekai</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">12 Episodes</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> 8.5
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            HD
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">Mushoku Tensei</h3>
+                    <p class="text-gray-400 text-xs">2023 • TV Series</p>
+                </div>
+                
+                <!-- Anime Card 3 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+3" alt="Anime 3" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Romance</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">24 Episodes</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> 9.0
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            HD
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">Kaguya-sama: Love is War</h3>
+                    <p class="text-gray-400 text-xs">2022 • TV Series</p>
+                </div>
+                
+                <!-- Anime Card 4 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+4" alt="Anime 4" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Supernatural</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">12 Episodes</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> 8.7
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            HD
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">Chainsaw Man</h3>
+                    <p class="text-gray-400 text-xs">2022 • TV Series</p>
+                </div>
+                
+                <!-- Anime Card 5 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+5" alt="Anime 5" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Drama</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Slice of Life</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">Movie</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> 9.2
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            HD
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">Your Name</h3>
+                    <p class="text-gray-400 text-xs">2016 • Movie</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recently Added Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-blue">
+                    <i class="fas fa-clock mr-2"></i> RECENTLY ADDED
+                </h2>
+                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                    View All <i class="fas fa-chevron-right ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Recently Added Item 1 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+1" alt="Recent 1" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Ep 12</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 8.3
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Demon Slayer S3</h3>
+                </div>
+                
+                <!-- Recently Added Item 2 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+2" alt="Recent 2" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Ep 8</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 8.1
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Vinland Saga S2</h3>
+                </div>
+                
+                <!-- Recently Added Item 3 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+3" alt="Recent 3" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Ep 5</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 8.6
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Hell's Paradise</h3>
+                </div>
+                
+                <!-- Recently Added Item 4 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+4" alt="Recent 4" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Ep 3</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 7.9
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Dr. Stone: New World</h3>
+                </div>
+                
+                <!-- Recently Added Item 5 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+5" alt="Recent 5" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Ep 1</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 8.4
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Oshi no Ko</h3>
+                </div>
+                
+                <!-- Recently Added Item 6 -->
+                <div class="anime-card group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+6" alt="Recent 6" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Movie</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 9.1
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">Suzume</h3>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular This Season Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-purple">
+                    <i class="fas fa-calendar-alt mr-2"></i> POPULAR THIS SEASON
+                </h2>
+                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                    View All <i class="fas fa-chevron-right ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Popular Item 1 -->
+                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="w-1/3 relative">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+1" alt="Popular 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-2/3 p-4">
+                        <h3 class="text-white font-bold text-lg mb-1">The Eminence in Shadow</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400 text-sm mr-2">
+                                <i class="fas fa-star"></i> 8.7
+                            </span>
+                            <span class="text-gray-400 text-sm">2023 • TV Series</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
+                            Cid Kagenou is a young man who dreams of becoming a "Shadowbroker" - a mastermind who operates from the shadows. After a truck accident, he's reborn in a magical world where he finally gets to live out his fantasy.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Fantasy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popular Item 2 -->
+                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="w-1/3 relative">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+2" alt="Popular 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-2/3 p-4">
+                        <h3 class="text-white font-bold text-lg mb-1">Blue Lock</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400 text-sm mr-2">
+                                <i class="fas fa-star"></i> 8.5
+                            </span>
+                            <span class="text-gray-400 text-sm">2022 • TV Series</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
+                            After Japan's poor performance in the World Cup, the Japan Football Union hires a mysterious coach to find the country's next striker. 300 young forwards are pitted against each other in a battle to become the best.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Sports</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Action</span>
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Psychological</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popular Item 3 -->
+                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="w-1/3 relative">
+                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+3" alt="Popular 3" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-2/3 p-4">
+                        <h3 class="text-white font-bold text-lg mb-1">Spy x Family</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400 text-sm mr-2">
+                                <i class="fas fa-star"></i> 8.9
+                            </span>
+                            <span class="text-gray-400 text-sm">2022 • TV Series</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
+                            A spy on an undercover mission gets married and adopts a child as part of his disguise. His wife is a deadly assassin, and his daughter is a telepath! None of them know each other's true identities.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Slice of Life</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Genres Section -->
+        <section class="mb-16">
+            <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-blue mb-6">
+                <i class="fas fa-tags mr-2"></i> BROWSE BY GENRE
+            </h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Genre 1 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-purple-900 to-blue-900 hover:from-purple-800 hover:to-blue-800 transition-all">
+                    <span class="text-white font-bold text-lg">Action</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+                
+                <!-- Genre 2 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-blue-900 to-green-900 hover:from-blue-800 hover:to-green-800 transition-all">
+                    <span class="text-white font-bold text-lg">Adventure</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+                
+                <!-- Genre 3 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-red-900 to-purple-900 hover:from-red-800 hover:to-purple-800 transition-all">
+                    <span class="text-white font-bold text-lg">Romance</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+                
+                <!-- Genre 4 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-green-900 to-yellow-900 hover:from-green-800 hover:to-yellow-800 transition-all">
+                    <span class="text-white font-bold text-lg">Comedy</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+                
+                <!-- Genre 5 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-yellow-900 to-red-900 hover:from-yellow-800 hover:to-red-800 transition-all">
+                    <span class="text-white font-bold text-lg">Drama</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+                
+                <!-- Genre 6 -->
+                <a href="#" class="genre-card relative overflow-hidden rounded-lg h-24 flex items-center justify-center bg-gradient-to-br from-indigo-900 to-purple-900 hover:from-indigo-800 hover:to-purple-800 transition-all">
+                    <span class="text-white font-bold text-lg">Fantasy</span>
+                    <div class="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <div class="relative">
+            <input type="checkbox" id="fab-toggle" class="hidden">
+            <label for="fab-toggle" class="fab-main bg-gradient-to-br from-purple-600 to-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all floating-icon pulse">
+                <i class="fas fa-bolt text-xl"></i>
+            </label>
+            
+            <div class="fab-menu absolute bottom-16 right-0 w-56 bg-gray-900 rounded-lg shadow-xl border border-gray-700 transform scale-0 origin-bottom-right transition-transform duration-300">
+                <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 rounded-t-lg">
+                    <i class="fas fa-home mr-3 text-purple-400"></i> Home
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800">
+                    <i class="fas fa-search mr-3 text-blue-400"></i> Quick Search
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800">
+                    <i class="fas fa-history mr-3 text-green-400"></i> Recently Viewed
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800">
+                    <i class="fas fa-bookmark mr-3 text-yellow-400"></i> Watchlist
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-gray-800 rounded-b-lg">
+                    <i class="fas fa-cog mr-3 text-gray-400"></i> Settings
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-90 border-t border-purple-900 py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-robot text-2xl neon-text-blue"></i>
+                        <a href="#" class="futuristic-font text-2xl font-bold neon-text-purple">NEON<span class="neon-text-blue">ANIME</span></a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        The ultimate destination for anime lovers. Stream and download your favorite anime in high quality.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 neon-text-blue">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Popular Anime</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">New Releases</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Genres</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Request Anime</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 neon-text-purple">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">DMCA</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 neon-text-blue">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter to get notified about new anime releases.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-purple-500 w-full">
+                        <button class="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 py-2 rounded-r-lg hover:opacity-90 transition-opacity">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2023 NeonAnime. All rights reserved. All anime content is property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle floating action menu
+        const fabToggle = document.getElementById('fab-toggle');
+        const fabMenu = document.querySelector('.fab-menu');
+        
+        fabToggle.addEventListener('change', function() {
+            if(this.checked) {
+                fabMenu.classList.remove('scale-0');
+                fabMenu.classList.add('scale-100');
+            } else {
+                fabMenu.classList.remove('scale-100');
+                fabMenu.classList.add('scale-0');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if(!fabToggle.contains(e.target) && !fabMenu.contains(e.target)) {
+                fabToggle.checked = false;
+                fabMenu.classList.remove('scale-100');
+                fabMenu.classList.add('scale-0');
+            }
+        });
+        
+        // Anime card hover effect enhancement
+        const animeCards = document.querySelectorAll('.anime-card');
+        animeCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').style.transform = 'scale(1.1)';
+                card.querySelector('div.absolute').style.opacity = '1';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').style.transform = 'scale(1)';
+                card.querySelector('div.absolute').style.opacity = '0';
+            });
+        });
+        
+        // Mobile menu toggle (placeholder - would need more implementation)
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Mobile menu would open here in a full implementation');
+        });
+        
+        // Theme toggle (dark/light)
+        const themeToggle = document.createElement('button');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.className = 'fixed bottom-24 right-8 z-50 bg-gray-800 text-yellow-300 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all';
+        document.body.appendChild(themeToggle);
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if(document.documentElement.classList.contains('dark')) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                themeToggle.className = 'fixed bottom-24 right-8 z-50 bg-gray-800 text-yellow-300 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                themeToggle.className = 'fixed bottom-24 right-8 z-50 bg-yellow-300 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all';
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Addex/anime" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
