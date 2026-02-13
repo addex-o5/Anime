@@ -1,28 +1,30 @@
-body {
-	padding: 2rem;
-	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+/* Global styles beyond Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --neon-blue: #00f7ff;
+    --neon-purple: #b400ff;
 }
 
-h1 {
-	font-size: 16px;
-	margin-top: 0;
+::selection {
+    background: var(--neon-purple);
+    color: white;
 }
 
-p {
-	color: rgb(107, 114, 128);
-	font-size: 15px;
-	margin-bottom: 10px;
-	margin-top: 5px;
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-.card {
-	max-width: 620px;
-	margin: 0 auto;
-	padding: 16px;
-	border: 1px solid lightgray;
-	border-radius: 16px;
+::-webkit-scrollbar-track {
+    background: #050508;
 }
 
-.card p:last-child {
-	margin-bottom: 0;
+::-webkit-scrollbar-thumb {
+    background: #b400ff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00f7ff;
 }
