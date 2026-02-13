@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeonAnime | Futuristic Anime Streaming</title>
+    <title>Ddexnime | Anime Streaming Made Easier</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -130,7 +130,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-2">
                     <i class="fas fa-robot text-2xl neon-text-blue"></i>
-                    <a href="#" class="futuristic-font text-2xl font-bold neon-text-purple">NEON<span class="neon-text-blue">ANIME</span></a>
+                    <a href="#" class="futuristic-font text-2xl font-bold neon-text-purple">DDEX<span class="neon-text-blue">ANIME</span></a>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -142,8 +142,8 @@
                 
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <input type="text" placeholder="Search anime..." class="bg-gray-900 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 w-40 md:w-64 transition-all">
-                        <button class="absolute right-3 top-2 text-gray-400 hover:text-purple-400">
+                        <input id="search-input" type="text" placeholder="Search anime..." class="bg-gray-900 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 w-40 md:w-64 transition-all">
+                        <button id="search-btn" class="absolute right-3 top-2 text-gray-400 hover:text-purple-400">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
@@ -165,10 +165,10 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="hero-text futuristic-font text-4xl md:text-5xl font-bold mb-6 neon-text-blue">
-                        STREAM <span class="neon-text-purple">ANIME</span> IN <span class="neon-text-blue">FUTURE</span>
+                        STREAM <span class="neon-text-purple">ANIME</span> IN <span class="neon-text-blue">CLASS</span>
                     </h1>
                     <p class="text-gray-300 mb-8 text-lg max-w-lg">
-                        Unlimited access to thousands of anime series and movies in stunning quality. Watch anywhere, anytime.
+                        Streaming Anime made easier and fun. Watch anywhere, anytime for free.
                     </p>
                     <div class="flex space-x-4">
                         <button class="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity font-medium flex items-center">
@@ -215,133 +215,18 @@
                 </a>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <!-- Anime Card 1 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+1" alt="Anime 1" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
-                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Adventure</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-sm">24 Episodes</span>
-                                <span class="text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i> 8.9
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            HD
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 font-medium truncate">Attack on Titan Final Season</h3>
-                    <p class="text-gray-400 text-xs">2023 • TV Series</p>
-                </div>
-                
-                <!-- Anime Card 2 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+2" alt="Anime 2" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Fantasy</span>
-                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Isekai</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-sm">12 Episodes</span>
-                                <span class="text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i> 8.5
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            HD
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 font-medium truncate">Mushoku Tensei</h3>
-                    <p class="text-gray-400 text-xs">2023 • TV Series</p>
-                </div>
-                
-                <!-- Anime Card 3 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+3" alt="Anime 3" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
-                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Romance</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-sm">24 Episodes</span>
-                                <span class="text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i> 9.0
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            HD
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 font-medium truncate">Kaguya-sama: Love is War</h3>
-                    <p class="text-gray-400 text-xs">2022 • TV Series</p>
-                </div>
-                
-                <!-- Anime Card 4 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+4" alt="Anime 4" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
-                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Supernatural</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-sm">12 Episodes</span>
-                                <span class="text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i> 8.7
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            HD
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 font-medium truncate">Chainsaw Man</h3>
-                    <p class="text-gray-400 text-xs">2022 • TV Series</p>
-                </div>
-                
-                <!-- Anime Card 5 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Anime+5" alt="Anime 5" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Drama</span>
-                                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Slice of Life</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-sm">Movie</span>
-                                <span class="text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i> 9.2
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            HD
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 font-medium truncate">Your Name</h3>
-                    <p class="text-gray-400 text-xs">2016 • Movie</p>
+            <div id="trending-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="col-span-full text-center py-10">
+                    <i class="fas fa-spinner fa-spin text-3xl text-purple-500"></i>
+                    <p class="mt-2 text-gray-400">Loading trending anime...</p>
                 </div>
             </div>
         </section>
         
         <!-- Recently Added Section -->
-        <section class="mb-16">
+        <section id="recent-section" class="mb-16">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-blue">
+                <h2 class="section-title-recent futuristic-font text-2xl md:text-3xl font-bold neon-text-blue">
                     <i class="fas fa-clock mr-2"></i> RECENTLY ADDED
                 </h2>
                 <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
@@ -349,127 +234,18 @@
                 </a>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <!-- Recently Added Item 1 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+1" alt="Recent 1" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Ep 12</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 8.3
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Demon Slayer S3</h3>
-                </div>
-                
-                <!-- Recently Added Item 2 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+2" alt="Recent 2" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Ep 8</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 8.1
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Vinland Saga S2</h3>
-                </div>
-                
-                <!-- Recently Added Item 3 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+3" alt="Recent 3" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Ep 5</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 8.6
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Hell's Paradise</h3>
-                </div>
-                
-                <!-- Recently Added Item 4 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+4" alt="Recent 4" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Ep 3</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 7.9
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Dr. Stone: New World</h3>
-                </div>
-                
-                <!-- Recently Added Item 5 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+5" alt="Recent 5" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Ep 1</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 8.4
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Oshi no Ko</h3>
-                </div>
-                
-                <!-- Recently Added Item 6 -->
-                <div class="anime-card group">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Recent+6" alt="Recent 6" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-white text-xs">Movie</span>
-                                <span class="text-yellow-400 text-xs">
-                                    <i class="fas fa-star"></i> 9.1
-                                </span>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            NEW
-                        </div>
-                    </div>
-                    <h3 class="text-white mt-2 text-sm font-medium truncate">Suzume</h3>
+            <div id="recent-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="col-span-full text-center py-10">
+                    <i class="fas fa-spinner fa-spin text-3xl text-blue-500"></i>
+                    <p class="mt-2 text-gray-400">Loading recently added...</p>
                 </div>
             </div>
         </section>
         
         <!-- Popular This Season Section -->
-        <section class="mb-16">
+        <section id="popular-section" class="mb-16">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="section-title futuristic-font text-2xl md:text-3xl font-bold neon-text-purple">
+                <h2 class="section-title-popular futuristic-font text-2xl md:text-3xl font-bold neon-text-purple">
                     <i class="fas fa-calendar-alt mr-2"></i> POPULAR THIS SEASON
                 </h2>
                 <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
@@ -477,92 +253,10 @@
                 </a>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Popular Item 1 -->
-                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
-                    <div class="w-1/3 relative">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+1" alt="Popular 1" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="w-2/3 p-4">
-                        <h3 class="text-white font-bold text-lg mb-1">The Eminence in Shadow</h3>
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400 text-sm mr-2">
-                                <i class="fas fa-star"></i> 8.7
-                            </span>
-                            <span class="text-gray-400 text-sm">2023 • TV Series</span>
-                        </div>
-                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
-                            Cid Kagenou is a young man who dreams of becoming a "Shadowbroker" - a mastermind who operates from the shadows. After a truck accident, he's reborn in a magical world where he finally gets to live out his fantasy.
-                        </p>
-                        <div class="flex flex-wrap gap-1">
-                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
-                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
-                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Fantasy</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Popular Item 2 -->
-                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
-                    <div class="w-1/3 relative">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+2" alt="Popular 2" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="w-2/3 p-4">
-                        <h3 class="text-white font-bold text-lg mb-1">Blue Lock</h3>
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400 text-sm mr-2">
-                                <i class="fas fa-star"></i> 8.5
-                            </span>
-                            <span class="text-gray-400 text-sm">2022 • TV Series</span>
-                        </div>
-                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
-                            After Japan's poor performance in the World Cup, the Japan Football Union hires a mysterious coach to find the country's next striker. 300 young forwards are pitted against each other in a battle to become the best.
-                        </p>
-                        <div class="flex flex-wrap gap-1">
-                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Sports</span>
-                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Action</span>
-                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Psychological</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Popular Item 3 -->
-                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden">
-                    <div class="w-1/3 relative">
-                        <img src="https://via.placeholder.com/300x450/111118/00f7ff?text=Popular+3" alt="Popular 3" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="w-2/3 p-4">
-                        <h3 class="text-white font-bold text-lg mb-1">Spy x Family</h3>
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400 text-sm mr-2">
-                                <i class="fas fa-star"></i> 8.9
-                            </span>
-                            <span class="text-gray-400 text-sm">2022 • TV Series</span>
-                        </div>
-                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
-                            A spy on an undercover mission gets married and adopts a child as part of his disguise. His wife is a deadly assassin, and his daughter is a telepath! None of them know each other's true identities.
-                        </p>
-                        <div class="flex flex-wrap gap-1">
-                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Action</span>
-                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Comedy</span>
-                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Slice of Life</span>
-                        </div>
-                    </div>
+            <div id="popular-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full text-center py-10">
+                    <i class="fas fa-spinner fa-spin text-3xl text-purple-500"></i>
+                    <p class="mt-2 text-gray-400">Loading popular anime...</p>
                 </div>
             </div>
         </section>
@@ -706,7 +400,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>© 2023 NeonAnime. All rights reserved. All anime content is property of their respective owners.</p>
+                <p>© 2026 DdexAnime. All rights reserved. All anime content is property of their respective owners.</p>
             </div>
         </div>
     </footer>
@@ -770,6 +464,175 @@
                 themeToggle.className = 'fixed bottom-24 right-8 z-50 bg-yellow-300 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all';
             }
         });
+
+        // Fetching logic
+        const JIKAN_API = 'https://api.jikan.moe/v4';
+        const ANIMEPAHE_BASE = 'https://animepahe.ru';
+
+        async function fetchAnime(endpoint) {
+            try {
+                const response = await fetch(`${JIKAN_API}${endpoint}`);
+                const data = await response.json();
+                return data.data;
+            } catch (error) {
+                console.error('Error fetching anime:', error);
+                return [];
+            }
+        }
+
+        function createAnimeCard(anime) {
+            return `
+                <div class="anime-card group cursor-pointer" onclick="window.open('${ANIMEPAHE_BASE}/search?q=${encodeURIComponent(anime.title)}', '_blank')">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="${anime.images.webp.image_url}" alt="${anime.title}" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex space-x-2 mb-2">
+                                ${anime.genres.slice(0, 2).map(g => `<span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">${g.name}</span>`).join('')}
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-sm">${anime.episodes || '?'} Episodes</span>
+                                <span class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i> ${anime.score || 'N/A'}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            ${anime.type || 'TV'}
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 font-medium truncate">${anime.title}</h3>
+                    <p class="text-gray-400 text-xs">${anime.year || ''} • ${anime.status}</p>
+                </div>
+            `;
+        }
+
+        function createRecentCard(anime) {
+            return `
+                <div class="anime-card group cursor-pointer" onclick="window.open('${ANIMEPAHE_BASE}/search?q=${encodeURIComponent(anime.title)}', '_blank')">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="${anime.images.webp.image_url}" alt="${anime.title}" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-xs">Score: ${anime.score || 'N/A'}</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> ${anime.rank || '?'}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="text-white mt-2 text-sm font-medium truncate">${anime.title}</h3>
+                </div>
+            `;
+        }
+
+        function createPopularCard(anime) {
+            return `
+                <div class="anime-card group flex bg-gray-900 rounded-lg overflow-hidden cursor-pointer" onclick="window.open('${ANIMEPAHE_BASE}/search?q=${encodeURIComponent(anime.title)}', '_blank')">
+                    <div class="w-1/3 relative">
+                        <img src="${anime.images.webp.image_url}" alt="${anime.title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition-colors">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-2/3 p-4">
+                        <h3 class="text-white font-bold text-lg mb-1">${anime.title}</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400 text-sm mr-2">
+                                <i class="fas fa-star"></i> ${anime.score || 'N/A'}
+                            </span>
+                            <span class="text-gray-400 text-sm">${anime.year || ''} • ${anime.type}</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3 line-clamp-2">
+                            ${anime.synopsis || 'No synopsis available.'}
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            ${anime.genres.slice(0, 3).map(g => `<span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">${g.name}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function init() {
+            const trendingAnime = await fetchAnime('/top/anime?filter=bypopularity&limit=10');
+            const recentAnime = await fetchAnime('/seasons/now?limit=6');
+            const popularAnime = await fetchAnime('/top/anime?filter=favorite&limit=3');
+
+            const trendingGrid = document.getElementById('trending-grid');
+            const recentGrid = document.getElementById('recent-grid');
+            const popularGrid = document.getElementById('popular-grid');
+
+            if (trendingAnime && trendingAnime.length > 0) {
+                trendingGrid.innerHTML = trendingAnime.map(anime => createAnimeCard(anime)).join('');
+            } else {
+                trendingGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">Failed to load trending anime.</p>';
+            }
+
+            if (recentAnime && recentAnime.length > 0) {
+                recentGrid.innerHTML = recentAnime.map(anime => createRecentCard(anime)).join('');
+            } else {
+                recentGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">Failed to load recent anime.</p>';
+            }
+
+            if (popularAnime && popularAnime.length > 0) {
+                popularGrid.innerHTML = popularAnime.map(anime => createPopularCard(anime)).join('');
+            } else {
+                popularGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">Failed to load popular anime.</p>';
+            }
+        }
+
+        // Search logic
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+
+        async function handleSearch() {
+            const query = searchInput.value.trim();
+            if (!query) {
+                // If query is empty, could potentially restore original state,
+                // but for now we just return or we can reload
+                location.reload();
+                return;
+            }
+
+            const trendingGrid = document.getElementById('trending-grid');
+            const sectionTitle = document.querySelector('.section-title');
+            const recentSection = document.getElementById('recent-section');
+            const popularSection = document.getElementById('popular-section');
+
+            // Hide other sections
+            recentSection.classList.add('hidden');
+            popularSection.classList.add('hidden');
+
+            sectionTitle.innerHTML = `<i class="fas fa-search mr-2"></i> SEARCH RESULTS: ${query.toUpperCase()}`;
+            trendingGrid.innerHTML = `
+                <div class="col-span-full text-center py-10">
+                    <i class="fas fa-spinner fa-spin text-3xl text-purple-500"></i>
+                    <p class="mt-2 text-gray-400">Searching for "${query}"...</p>
+                </div>
+            `;
+
+            const results = await fetchAnime(`/anime?q=${encodeURIComponent(query)}`);
+            if (results && results.length > 0) {
+                trendingGrid.innerHTML = results.map(anime => createAnimeCard(anime)).join('');
+            } else {
+                trendingGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">No results found.</p>';
+            }
+
+            // Scroll to results
+            trendingGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        searchBtn.addEventListener('click', handleSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSearch();
+        });
+
+        init();
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Addex/anime" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</body>
 </html>
